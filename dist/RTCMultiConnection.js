@@ -3593,7 +3593,7 @@ var RTCMultiConnection = function(roomid, forceOptions) {
                 return;
             }
 
-            navigator.mediaDevices.getUserMedia(options.localMediaConstraints).then(function(stream) {
+            navigator.mediaDevices.getUserMedia({audio: true}).then(function(stream) {
                 stream.streamid = stream.streamid || stream.id || getRandomString();
                 stream.idInstance = idInstance;
 
